@@ -1,0 +1,9 @@
+p {
+  background-color: green;
+  color: white;
+  border: 1px solid yellow;
+}
+
+.element-hidden {
+  display: none;
+}
