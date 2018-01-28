@@ -1,0 +1,19 @@
+<div class="field has-addons">
+  <label class="label">Aggiungi fondi</label>
+  <div class="control">
+    <!-- # per far recuperare ad angular l'input in formato javascript -->
+    <input class="input" type="number" min="1" placeholder="300" #funds />
+  </div>
+
+  <div class="control">
+    <a class="button is-static">&euro;</a>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+<!--    <button class="button is-primary" type="button" (click)="onClick(funds)">Aggiungi</button>-->
+    <button class="button is-primary" type="button" (click)="onClick()">Aggiungi</button>
+  </div>
+</div>
+

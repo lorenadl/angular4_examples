@@ -1,0 +1,26 @@
+<div class="card">
+  <app-card-vendor-image [type]="settings.cardType"></app-card-vendor-image>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Registrata a nome di</p>
+        <p class="subtitle is-6">{{ settings.registeredUsername }}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <ul>
+        <li><strong>N&deg; carta:</strong> {{ settings.cardNumber | cardNumber }}</li>
+        <li><strong>Registrata:</strong> {{ settings.cardRegistered | date:'dd/MM/yy' }}</li>
+        <li><strong>Scadenza:</strong> {{ settings.cardDeadline | date:'dd/MM/yy' }}</li>
+        <li><strong>Fondi disponibili:</strong> {{ settings.cardFunds | currency:'EUR':'€' }}</li>
+      </ul>
+    </div>
+
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item" (click)="handleCardAction(1); false">+ fondi</a>
+      <a href="#" class="card-footer-item" (click)="handleCardAction(2); false">utilizza</a>
+      <a href="#" class="card-footer-item" (click)="handleCardAction(3); false">rimuovi</a>
+    </footer>
+  </div>
+</div>

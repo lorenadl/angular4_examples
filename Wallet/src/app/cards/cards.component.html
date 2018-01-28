@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="title is-2">Le mie carte</h2>
+  <div class="columns">
+    <div class="column">
+      <button type="button" class="button is-primary" (click)="handleNewCard()">Registra una nuova carta</button>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-two-quarter" *ngFor="let card of cards">
+      <app-card [settings]="card" (onAction)="cardAction($event)"></app-card>
+    </div>
+  </div>
+</div>
+<app-modal
+    modalTitle="Aggiungi dei fondi"
+    [isActive]="addFundsShow"
+    (onClose)="addFundsShow = !addFundsShow"
+>
+  <app-add-funds (onAddFunds)="addFunds($event)"></app-add-funds>
+</app-modal>
+
+<!-- Modale per nuova carta.
+Si potrebbe fare con solo un modale e con un ngIf decidere quale contenuto mostrare nel modale -->
+<app-modal
+  modalTitle="Aggiungi una carta"
+  [isActive]="addNewCardShow"
+  (onClose)="addNewCardShow = !addNewCardShow"
+>
+  <app-new-card (onNewCard)="newCard($event)"></app-new-card>
+</app-modal>

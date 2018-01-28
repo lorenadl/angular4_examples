@@ -1,0 +1,98 @@
+<form (ngSubmit)="addNewCard()" #f="ngForm">
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Nome e cognome</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control is-expanded">
+          <!-- ngModel dice solo che il campo fa parte del form, di tenerne conto
+           Attenzione: non è [(ngModel)], 2-ways binding!
+
+           guarda le proprietà del campo sulla dev console, puoi usare le proprietà ng-... per cambiare gli stili.
+           -->
+          <input class="input" type="text" placeholder="Nome" name="firstname" ngModel required />
+
+          <!-- così mi stampo sotto quello che scrivo - ho usato il 2_ways binding, ma non usarlo perchè è pesante.
+          Si usa ad esempio per recuperare automaticamente i dati da mettere in un form (es. in edit),
+          ma è preferibile non usarlo
+          <input class="input" type="text" placeholder="Nome" name="firstname" [(ngModel)]="text" required /> {{text}}-->
+        </div>
+      </div>
+      <div class="field">
+        <div class="control is-expanded">
+          <input class="input" type="text" placeholder="Cognome" name="lastname" ngModel required>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">Informazioni</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control is-expanded">
+          <input class="input" type="text" placeholder="Numero carta" name="cardnumber" ngModel required>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <select name="month" ngModel required>
+              <option *ngFor="let month of months; let i = index;" [value]="i">{{ month }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <select name="year" ngModel required>
+              <option value="2020">20</option>
+              <option value="2021">21</option>
+              <option value="2022">22</option>
+              <option value="2023">23</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label">CVV</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control is-expanded">
+          <input class="input" type="text" placeholder="CVV" name="cvv" ngModel required>
+        </div>
+      </div>
+    </div>
+    <div class="field-label is-normal">
+      <label class="label">Circuito</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <select name="cardtype" ngModel required>
+              <option value="visa">VISA</option>
+              <option value="mastercard">MasterCard</option>
+              <option value="amex">America Express</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <button class="button is-primary" type="submit">Aggiungi</button>
+    </div>
+  </div>
+</form>

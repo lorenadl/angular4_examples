@@ -1,0 +1,15 @@
+img{
+  padding: 15%;
+}
+
+img.visa{
+  background-color: #0E4595;
+}
+
+img.mastercard{
+  background-color: #000;
+}
+
+img.amex{
+  background-color: #2557D6;
+}
