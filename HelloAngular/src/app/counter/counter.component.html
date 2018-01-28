@@ -1,0 +1,12 @@
+
+<!--<button type="" (click)="showHideMessage()">Vsualizza dettagli</button>-->
+<app-counter-button (onClick)="showHideMessage()"></app-counter-button>
+
+<p [hidden]="viewDetails">Dettagli</p>
+<hr>
+<p *ngFor="let item of log; let i = index"
+   [ngStyle]="{'background-color': i >= 4 ? 'red' : 'transparent'}"
+   [ngClass]="{'text-colored': i >= 4}"
+>
+  {{ item | date:'dd-MM-yyyy / HH:mm:ss' }}
+</p>

@@ -1,0 +1,11 @@
+<button type="button" (click)="toggleDetails()" [innerText]="detailsShown ? 'Nascondi' : 'Visualizza'"></button>
+<p [hidden]="!detailsShown">Questi sono i dettagli</p>
+<h2>Log messages</h2>
+<ul>
+  <li *ngFor="let msg of logMessages; let i = index"
+      [ngStyle]="{'background-color': (i > 3) ? 'red' : 'white'}"
+      [ngClass]="{'color-white': (i > 3)}"
+  >
+    {{msg}}
+  </li>
+</ul>

@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {
+      "title": "Message title 1",
+      "message": "Message text 1"
+    },
+    {
+      "title": "Message title 2",
+      "message": "Message text 2"
+    },    {
+      "title": "Message title 3",
+      "message": "Message text 3"
+    },
+    {
+      "title": "Message title 4",
+      "message": "Message text 4"
+    }
+  ]
+}

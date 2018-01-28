@@ -1,0 +1,43 @@
+<app-messages></app-messages>
+
+<hr>
+<h1>app.component</h1>
+<p>Questo è un altro paragrafo, che non prende gli stili di message.component</p>
+
+<app-warning-alert [alertMessage]="title" [isHidden]="hideMessage"></app-warning-alert> <!-- con le [] "true" viene valutato come fosse codice js, non è una stringa! -->
+<app-success-alert successMessage="Messaggio OK" [showMessage]="showSuccessMessage" (onMessage)="handleMessage($event)"></app-success-alert>
+<hr>
+
+<ul>
+  <li *ngFor="let element of elements"> {{ element }}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let element of elements; let i = index">Indice: {{i}} - Elemento: {{ element }}</li>
+</ul>
+
+<!--<ul>
+  <li *ngFor="let element of elements; let i = index" (click)="handleClick(i)">Indice: {{i}} - Elemento: {{ element }}</li>
+</ul>-->
+
+<app-button (onMessage)="handleButtonClick($event)"></app-button>
+<p>Paragrafo di dettaglio</p>
+
+<app-counter></app-counter>
+
+<hr>
+
+<ul>
+  <li *ngFor="let message of messages">
+    <h2>{{ message.title }}</h2>
+    <p>{{ message.message }}</p>
+  </li>
+</ul>
+
+<hr>
+<h1>Game Control</h1>
+
+<app-game-control messaggeInInput="Questo è il messaggio passato dall'html" (onNumberEmitted)="handleNumberEmitted($event)"></app-game-control>
+
+<app-even (onNumberEmitted)="handleNumberEmitted($event)"></app-even>
+<app-odd (onNumberEmitted)="handleNumberEmitted($event)"></app-odd>

@@ -1,0 +1,16 @@
+<p class="alert-text" [style.display]="showMessage ? 'block' : 'none'">
+  {{ successMessage }}
+</p>
+
+<p class="alert-text" [ngClass]="{'element-hidden': !showMessage}">ngClass - Everything is ok!</p>
+
+<p class="alert-text" [ngStyle]="{'display': showMessage ? 'block' : 'none'}">ngStyle - Everything is ok!</p>
+
+<p class="alert-text" *ngIf="showMessage">*ngIf - Everything is ok!</p>
+
+<p *ngIf="showMessage; else other">*ngIf; else - Everything is ok!</p>
+<ng-template #other><p>Else text</p></ng-template>
+
+<p>showMessage: {{ showMessage }}</p>
+
+<button type="button" (click)="sendMessage()">Send a message</button>
