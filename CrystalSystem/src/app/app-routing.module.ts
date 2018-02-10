@@ -23,7 +23,6 @@ const routes: Routes = [
       //{ path: 'all', component: CustomerListComponent}
       { path: '', component: CustomerListComponent, resolve: { customers: CustomerListResolve}},
       { path: 'add', component: CustomerCreateComponent},
-      { path: '', component: CustomerCreateComponent},
       // { path: ':cid/view', component: CustomerRetrieveComponent},
       { path: ':cid/view', component: CustomerRetrieveComponent, resolve: { customer: CustomerRetrieveResolve }}
     ]
