@@ -16,4 +16,8 @@ export class CustomersService {
   index(): Observable<ICustomers> {
     return this.http.get<ICustomers>(`${environment.apiHost}/customers`);
   }
+
+  create(payload): Observable<any> {
+    return this.http.post(`${environment.apiHost}/customers`, payload);
+  }
 }
